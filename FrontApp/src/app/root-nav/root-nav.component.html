@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav  #drawer class="sidenav bg-dark text-white " fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="bg-dark text-white">Menu</mat-toolbar>
+    <mat-nav-list  >
+      <a class="text-white" mat-list-item [routerLink]="['indicator-last']">Inicio</a>
+      <a class="text-white" mat-list-item [routerLink]="['indicator-date']">Indicadores por fecha</a>
+      <a class="text-white" mat-list-item [routerLink]="['indicator-values']">Indicadores por tipo</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="bg-dark">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon class="text-white" aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="text-white">Aplicacion de Indicadores Economicos</span>
+    </mat-toolbar>
+    <ng-content></ng-content>
+    
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
