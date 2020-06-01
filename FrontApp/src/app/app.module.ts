@@ -23,6 +23,8 @@ import {IndicatorLastService} from './indicator-last/indicator-last.service';
 import {HttpClientModule} from '@angular/common/http'; 
 import {TableValuesComponent} from './indicator-values/selector-values/table-values/table-values.component';
 import {SelectorValuesComponent} from './indicator-values/selector-values/selector-values.component';
+import { SelectorDateComponent } from './indicator-date/datepicker/selector-date/selector-date.component';
+import { TableDateComponent } from './indicator-date/datepicker/table-date/table-date.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import {SelectorValuesComponent} from './indicator-values/selector-values/select
     DatepickerComponent,
     TableValuesComponent,
     SelectorValuesComponent,
+    SelectorDateComponent,
+    TableDateComponent,
   ],
   imports: [
     BrowserModule,
